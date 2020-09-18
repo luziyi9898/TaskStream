@@ -46,4 +46,11 @@ public class Main {
             }
         }
     }
+    public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData) {
+        tasksData.stream()
+                .filter((s)-> s instanceof Deadline)
+                .sorted((a,b) -> a.getDesciption().toLowerCase().compareTo(b.getDescription().toLowerCase()))
+                .forEach(System.out::println);
+    }
+
 }
